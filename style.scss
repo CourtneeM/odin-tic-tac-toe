@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: sans-serif;
+  color: #eee;
+  background: #333;
+}
+
+#player-details-container {
+  margin-top: 60px;
+
+  #num-players-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+
+    >:nth-child(2n+1) {
+      margin: 0 5px;
+    }
+
+    >:nth-child(2) {
+      margin-right: 20px;
+    }
+    
+    >:nth-child(3) {
+      margin-left: 20px;
+    }
+  }
+
+  #player-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    margin: 0 auto;
+
+    input {
+      width: 120px;
+      margin: 0 8px;
+      padding: 3px;
+    }
+
+    p:nth-child(even) {
+      margin: 0 8px;
+      font-weight: 600;
+    }
+
+    p:nth-child(2) {
+      margin-right: 15px;
+    }
+    
+    p:nth-child(3) {
+      margin-left: 15px;
+    }
+  }
+}
+
+#game-board-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-content: center;
+  width: 300px;
+  height: 400px;
+  margin: 0 auto;
+  
+  .board-square {
+    width: 100px;
+    height: 100px;
+    padding: 22px 32px;
+    font-size: 46px;
+  }
+
+  .board-square:nth-child(3n+1),
+  .board-square:nth-child(3n+2) {
+    border-right: 5px solid teal;
+  }
+
+  .board-square:nth-child(n+1):nth-child(-n+6) {
+    border-bottom: 5px solid teal;
+  }
+}
+
+#results-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 100px;
+  margin: 0 auto 60px;
+  font-weight: 600;
+  background: teal;
+  border: 5px solid #eee;
+  border-radius: 8px;
+}
+
+#game-controls-container { 
+  display: flex;
+  justify-content: center;
+
+  button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+}
